@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "physics-eval"
+version = "1.0.0"
+description = "HLE-style evaluation harness for the PHYSICS-Verified benchmark"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = ["openai>=1.40", "datasets>=2.19"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+physics-eval = "physics_eval.cli:main"
+
+[tool.setuptools]
+packages = ["physics_eval"]
